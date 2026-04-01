@@ -1,0 +1,205 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Основні кольори для світлої теми */
+    --background: 255 255 255;
+    /* #FFFFFF - білий фон */
+    --foreground: 0 0 0;
+    /* #000000 - чорний текст */
+
+    /* Додаткові кольори для інтерфейсу */
+    --card: 255 255 255;
+    /* #FFFFFF - білий для карток */
+    --card-foreground: 0 0 0;
+    /* #000000 - чорний для тексту на картках */
+    --popover: 255 255 255;
+    /* #FFFFFF - білий для поповерів */
+    --popover-foreground: 0 0 0;
+    /* #000000 - чорний для тексту в поповерах */
+
+    --primary: 0 0 0;
+    /* #000000 - чорний для первинних елементів */
+    --primary-foreground: 255 255 255;
+    /* #FFFFFF - білий для тексту на первинних елементах */
+
+    --secondary: 243 244 246;
+    /* #F3F4F6 - світло-сірий для вторинних елементів */
+    --secondary-foreground: 0 0 0;
+    /* #000000 - чорний для тексту на вторинних елементах */
+
+    --muted: 243 244 246;
+    /* #F3F4F6 - світло-сірий для приглушених елементів */
+    --muted-foreground: 107 114 128;
+    /* #6B7280 - сірий для приглушеного тексту */
+
+    --accent: 243 244 246;
+    /* #F3F4F6 - світло-сірий для акцентних елементів */
+    --accent-foreground: 0 0 0;
+    /* #000000 - чорний для тексту на акцентних елементах */
+
+    --destructive: 239 68 68;
+    /* #EF4444 - червоний для деструктивних дій */
+    --destructive-foreground: 255 255 255;
+    /* #FFFFFF - білий для тексту на деструктивних елементах */
+
+    --border: 229 231 235;
+    /* #E5E7EB - світло-сірий для рамок */
+    --input: 229 231 235;
+    /* #E5E7EB - світло-сірий для інпутів */
+    --ring: 0 0 0;
+    /* #000000 - чорний для кілець фокусу */
+
+    --radius: 0.5rem;
+    /* 8px - радіус для кутів */
+  }
+
+  .dark {
+    /* Основні кольори для темної теми */
+    --background: 0 0 0;
+    /* #000000 - чорний фон */
+    --foreground: 255 255 255;
+    /* #FFFFFF - білий текст */
+
+    /* Додаткові кольори для інтерфейсу */
+    --card: 0 0 0;
+    /* #000000 - чорний для карток */
+    --card-foreground: 255 255 255;
+    /* #FFFFFF - білий для тексту на картках */
+    --popover: 0 0 0;
+    /* #000000 - чорний для поповерів */
+    --popover-foreground: 255 255 255;
+    /* #FFFFFF - білий для тексту в поповерах */
+
+    --primary: 255 255 255;
+    /* #FFFFFF - білий для первинних елементів */
+    --primary-foreground: 0 0 0;
+    /* #000000 - чорний для тексту на первинних елементах */
+
+    --secondary: 31 41 55;
+    /* #1F2937 - темно-сірий для вторинних елементів */
+    --secondary-foreground: 255 255 255;
+    /* #FFFFFF - білий для тексту на вторинних елементах */
+
+    --muted: 31 41 55;
+    /* #1F2937 - темно-сірий для приглушених елементів */
+    --muted-foreground: 156 163 175;
+    /* #9CA3AF - світло-сірий для приглушеного тексту */
+
+    --accent: 31 41 55;
+    /* #1F2937 - темно-сірий для акцентних елементів */
+    --accent-foreground: 255 255 255;
+    /* #FFFFFF - білий для тексту на акцентних елементах */
+
+    --destructive: 239 68 68;
+    /* #EF4444 - червоний для деструктивних дій */
+    --destructive-foreground: 255 255 255;
+    /* #FFFFFF - білий для тексту на деструктивних елементах */
+
+    --border: 31 41 55;
+    /* #1F2937 - темно-сірий для рамок */
+    --input: 31 41 55;
+    /* #1F2937 - темно-сірий для інпутів */
+    --ring: 255 255 255;
+    /* #FFFFFF - білий для кілець фокусу */
+  }
+
+  .black-and-white {
+    /* Чорно-біла тема */
+    --background: 255 255 255;
+    /* #FFFFFF - білий фон */
+    --foreground: 0 0 0;
+    /* #000000 - чорний текст */
+
+    /* Додаткові кольори для інтерфейсу */
+    --card: 255 255 255;
+    /* #FFFFFF - білий для карток */
+    --card-foreground: 0 0 0;
+    /* #000000 - чорний для тексту на картках */
+    --popover: 255 255 255;
+    /* #FFFFFF - білий для поповерів */
+    --popover-foreground: 0 0 0;
+    /* #000000 - чорний для тексту в поповерах */
+
+    --primary: 0 0 0;
+    /* #000000 - чорний для первинних елементів */
+    --primary-foreground: 255 255 255;
+    /* #FFFFFF - білий для тексту на первинних елементах */
+
+    --secondary: 243 244 246;
+    /* #F3F4F6 - світло-сірий для вторинних елементів */
+    --secondary-foreground: 0 0 0;
+    /* #000000 - чорний для тексту на вторинних елементах */
+
+    --muted: 243 244 246;
+    /* #F3F4F6 - світло-сірий для приглушених елементів */
+    --muted-foreground: 107 114 128;
+    /* #6B7280 - сірий для приглушеного тексту */
+
+    --accent: 0 0 0;
+    /* #000000 - чорний для акцентних елементів */
+    --accent-foreground: 255 255 255;
+    /* #FFFFFF - білий для тексту на акцентних елементах */
+
+    --destructive: 0 0 0;
+    /* #000000 - чорний для деструктивних дій */
+    --destructive-foreground: 255 255 255;
+    /* #FFFFFF - білий для тексту на деструктивних елементах */
+
+    --border: 0 0 0;
+    /* #000000 - чорний для рамок */
+    --input: 0 0 0;
+    /* #000000 - чорний для інпутів */
+    --ring: 0 0 0;
+    /* #000000 - чорний для кілець фокусу */
+  }
+}
+
+@layer base {
+  * {
+    /* @apply border-border; */
+  }
+
+  body {
+    /* @apply bg-background text-foreground; */
+    background: var(--background);
+    color: var(--foreground);
+  }
+}
+
+.dark body {
+  background-color: black !important;
+  /* color: var(--foreground); */
+}
+
+/* Додаткові стилі для чорно-білої теми */
+.black-and-white {
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+}
+
+.black-and-white * {
+  border-color: rgb(var(--border));
+}
+
+.black-and-white .bg-white {
+  background-color: rgb(var(--background)) !important;
+}
+
+.black-and-white .text-black {
+  color: rgb(var(--foreground)) !important;
+}
+
+.black-and-white .border-black {
+  border-color: rgb(var(--border)) !important;
+}
+
+.black-and-white .bg-black {
+  background-color: rgb(var(--foreground)) !important;
+  color: rgb(var(--background)) !important;
+}
+
+.black-and-white .text-white {
+  color: rgb(var(--background)) !important;
+}

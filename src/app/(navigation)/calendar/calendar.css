@@ -1,0 +1,259 @@
+/* src/app/(navigation)/calendar/calendar.css */
+
+:root {
+  --fc-border-color: rgba(0, 0, 0, 0.04);
+  --fc-button-bg: #ffffff;
+  --fc-button-hover-bg: #f8f9fa;
+  --fc-button-active-bg: #000000;
+  --fc-button-text: #000000;
+  --fc-button-active-text: #ffffff;
+  --calendar-bg: #ffffff;
+  --calendar-text: #1a1a1a;
+  --calendar-header-text: #000000;
+  --calendar-day-hover: rgba(0, 0, 0, 0.02);
+  --cell-padding: 12px;
+}
+
+.dark,
+[data-theme='dark'] {
+  --fc-border-color: rgba(255, 255, 255, 0.05);
+  --fc-button-bg: #111111;
+  --fc-button-hover-bg: #222222;
+  --fc-button-active-bg: #ffffff;
+  --fc-button-text: #ffffff;
+  --fc-button-active-text: #000000;
+  --calendar-bg: #000000;
+  --calendar-text: #f0f0f0;
+  --calendar-header-text: #ffffff;
+  --calendar-day-hover: rgba(255, 255, 255, 0.04);
+}
+
+/* ================== CORE CONTAINER ================== */
+.fc {
+  font-family: inherit;
+  --fc-page-bg-color: var(--calendar-bg);
+  --fc-neutral-bg-color: transparent;
+  --fc-list-event-hover-bg-color: var(--calendar-day-hover);
+  --fc-today-bg-color: transparent;
+}
+
+/* ================== NAVIGATION & TOOLBAR ================== */
+.fc .fc-toolbar {
+  margin-bottom: .6rem !important;
+  padding: 0 0.5rem;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+  color: var(--calendar-header-text);
+}
+
+/* Button Group Styling */
+.fc .fc-button-group {
+  gap: 4px;
+}
+
+.fc .fc-button {
+  border-radius: 10px !important;
+  padding: 6px 14px !important;
+  font-weight: 600 !important;
+  font-size: 0.8125rem !important;
+  transition: all 0.2s ease !important;
+  border: 1px solid var(--fc-border-color) !important;
+  background-color: var(--fc-button-bg) !important;
+  color: var(--fc-button-text) !important;
+  box-shadow: none !important;
+  text-transform: capitalize;
+}
+
+.fc .fc-button:hover {
+  background-color: var(--fc-button-hover-bg) !important;
+  border-color: var(--fc-button-active-bg) !important;
+}
+
+.fc .fc-button:active,
+.fc .fc-button-active {
+  background-color: var(--fc-button-active-bg) !important;
+  color: var(--fc-button-active-text) !important;
+  border-color: var(--fc-button-active-bg) !important;
+}
+
+.fc .fc-button-primary:not(:disabled):active:focus,
+.fc .fc-button-primary:not(:disabled).fc-button-active:focus {
+  box-shadow: none !important;
+}
+
+/* Today Button */
+.fc .fc-today-button {
+  background-color: transparent !important;
+  border: 1px solid var(--fc-border-color) !important;
+  opacity: 1 !important;
+  font-weight: 700 !important;
+}
+
+/* ================== GRID & CELLS ================== */
+.fc-theme-standard td,
+.fc-theme-standard th {
+  border: 1px solid var(--fc-border-color) !important;
+}
+
+.fc-theme-standard .fc-scrollgrid {
+  border: none !important;
+}
+
+/* Header Cells (Days of week) */
+.fc .fc-col-header-cell {
+  padding: 12px 0 !important;
+  background: transparent;
+}
+
+.fc .fc-col-header-cell-cushion {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #888888;
+}
+
+/* Day Number */
+.fc .fc-daygrid-day-number {
+  padding: 12px 14px !important;
+  font-size: 0.85rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.02em;
+  color: var(--calendar-text);
+  background: transparent !important;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+
+.fc .fc-daygrid-day:hover .fc-daygrid-day-number {
+  opacity: 1;
+}
+
+.fc .fc-day-today {
+  background: transparent !important;
+}
+
+.fc .fc-day-today .fc-daygrid-day-number {
+  background: transparent !important;
+  color: var(--fc-button-active-bg) !important;
+  /* Uses black in light, white in dark */
+  opacity: 1 !important;
+  font-weight: 950 !important;
+  box-shadow: none !important;
+  transform: none !important;
+  padding: 12px 14px !important;
+  min-width: auto !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 !important;
+}
+
+.dark .fc .fc-day-today .fc-daygrid-day-number {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+/* Hover effect on cells */
+.fc .fc-daygrid-day:hover {
+  background-color: var(--calendar-day-hover) !important;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.02);
+}
+
+.dark .fc .fc-daygrid-day:hover {
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.01);
+}
+
+/* ================== EVENTS ================== */
+.fc-v-event,
+.fc-h-event {
+  border-radius: 6px !important;
+  padding: 2px 6px !important;
+  margin: 1px 4px !important;
+  border: none !important;
+  transition: all 0.2s ease !important;
+  background-color: var(--fc-button-active-bg) !important;
+  color: var(--fc-button-active-text) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+.fc-event:hover {
+  opacity: 1 !important;
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.fc-daygrid-event {
+  white-space: normal !important;
+}
+
+.fc-event-main {
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+/* Other days color */
+.fc-day-other .fc-daygrid-day-number {
+  opacity: 0.85;
+}
+
+/* Remove default styles and define proportions */
+.fc .fc-daygrid-day-frame {
+  min-height: 80px !important;
+  /* Clearly defined height for a more square-like look */
+  display: flex !important;
+  flex-direction: column !important;
+  transition: background-color 0.2s ease;
+}
+
+.fc .fc-scroller {
+  overflow: auto !important;
+  /* Allow scrolling if 200x200 cells exceed view height */
+}
+
+/* ================== SCROLLBAR ================== */
+.fc-scroller::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+.fc-scroller::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.fc-scroller::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 10px;
+  transition: background 0.2s ease;
+}
+
+.fc-scroller:hover::-webkit-scrollbar-thumb {
+  background: var(--fc-border-color);
+}
+
+/* ================== ANIMATIONS ================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.custom-calendar-view .fc-scrollgrid {
+  border: none !important;
+}
+
+.fc-daygrid-event-harness {
+  margin-bottom: 2px !important;
+}
