@@ -86,8 +86,8 @@ export default function Navbar() {
                           : "text-gray-200 hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5"
                       )}
                     >
-                      <Icon className={cn("h-4 w-4", isActive ? "opacity-100" : "opacity-40")} />
-                      <span>{item.label}</span>
+                      <Icon className={cn("h-4 w-4", isActive ? "opacity-100 text-white" : "opacity-40")} />
+                      <span className="text-white">{item.label}</span>
                     </Button>
                   </Link>
                 );
@@ -105,8 +105,8 @@ export default function Navbar() {
             {user ? (
               <div className="flex items-center gap-3">
                 <Link href="/profile">
-                  <Button variant="ghost" className="gap-2 p-1.5 pr-4 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-900 border border-transparent hover:border-gray-200 dark:hover:border-neutral-800 transition-all font-black hover:font-white ">
-                    <Avatar className="h-8 w-8 border border-white dark:border-black shadow-sm">
+                  <Button variant="ghost" className="gap-2 p-1.5 pr-4 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-900  transition-all font-black hover:font-white ">
+                    <Avatar className="h-8 w-8 shadow-sm">
                       <AvatarFallback className="text-[10px] bg-black text-white dark:bg-white dark:text-black">
                         {getInitials(user.fullName)}
                       </AvatarFallback>
